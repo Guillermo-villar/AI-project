@@ -1,58 +1,60 @@
-# Predicción de Dígitos con TensorFlow
+# Personal AI development proyect - Digit detection in Python
 
-Este proyecto utiliza TensorFlow para crear un modelo de Deep Learning capaz de predecir dígitos escritos a mano, utilizando una base de datos de imágenes de dígitos.
+This proyect uses Tensorflow to create a Machine Learning pipeline able to detect hand written digits, learning from a MINST digit dataset. The graphical interface uses Tkinter.
 
-## Descripción
+## Description
 
-Este repositorio contiene un modelo de clasificación de dígitos basado en la base de datos **MNIST**. El modelo se entrena para reconocer dígitos escritos a mano del 0 al 9. La aplicación incluye una interfaz gráfica en Python que permite al usuario dibujar un dígito y predecir su valor utilizando el modelo entrenado.
+This repository contains a digit classification model based on the MNIST dataset. The model is trained to recognize handwritten digits from 0 to 9. The application includes a graphical interface built with Python that allows the user to draw a digit and predict its value using the trained model.
 
-## Características
+## Characteristics
 
-- Modelo de clasificación de dígitos entrenado con TensorFlow.
-- Interfaz gráfica en Python con **Tkinter** para dibujar dígitos a mano alzada.
-- Predicción en tiempo real utilizando el modelo entrenado.
-- Visualización de resultados con la predicción del dígito y la probabilidad.
+- Digit classification model trained with TensorFlow.
+- Python graphical interface using Tkinter to draw handwritten digits.
+- Real-time predictions using the trained model.
+- Visualization of results, displaying the predicted digit and its probability.
 
-## Instalación
+## Instalation
 
-Para ejecutar este proyecto en tu entorno local, sigue los pasos a continuación.
+To test and try this code on your own machine, follow along the instructions:
 
-1. Clona el repositorio:
+1. Clone the repository:
 
     ```bash
-    git clone https://github.com/tu-usuario/ia-prediccion-digitos.git
-    cd ia-prediccion-digitos
+    git clone https://github.com/your-username/digit-prediction-ia.git
+    cd digit-prediction-ia
     ```
 
-2. Crea y activa un entorno virtual:
+2. Create and activate a virtual environment:
 
     ```bash
     python -m venv venv
-    source venv/bin/activate  # En Linux/Mac
-    venv\Scripts\activate     # En Windows
+    source venv/bin/activate  # On Linux/Mac
+    venv\Scripts\activate     # On Windows
     ```
 
-3. Instala las dependencias necesarias:
+3. Install the required dependencies:
 
     ```bash
     pip install -r requirements.txt
     ```
 
-## Uso
+## Usage
 
-1. Entrena el modelo de predicción ejecutando el siguiente comando:
+1. Train the prediction model by running the following command:
 
     ```bash
     python train.py
     ```
 
-2. Inicia la interfaz gráfica para dibujar y predecir un dígito:
+2. Launch the graphical interface to draw and predict a digit:
 
     ```bash
     python app.py
     ```
 
-3. La aplicación te permitirá dibujar un dígito y hacer una predicción basada en el modelo entrenado.
+3. The app will allow you to draw a hand written digit and test the model with your own hands!
 
-## Estructura del Proyecto
+## Proyect structure
 
+    **ML_pipeline.py** : This file will hold all Machine Learning logic, as well as the code for the training of the model and the function used to predict 
+    **App.py** : This file will hold the graphical interface and house the actual running of my app. 
