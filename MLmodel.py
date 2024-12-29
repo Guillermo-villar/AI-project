@@ -16,6 +16,12 @@ def train_model():
     x_train = x_train / 255.0  # Normalize to [0, 1]
     x_test = x_test / 255.0  # Normalize to [0, 1]
 
+    # Binarize the data (values below 0.5 become 0, above or equal 0.5 become 1), getting rid of gray gradients
+    
+    x_train = (x_train >= 0.5).astype(np.float32)
+    x_test = (x_test >= 0.5).astype(np.float32)
+
+
     # One-hot encode the labels
     y_train_encoded = to_categorical(y_train, 10)
     y_test_encoded = to_categorical(y_test, 10)
