@@ -8,6 +8,8 @@ Flatten = tf.keras.layers.Flatten
 to_categorical = tf.keras.utils.to_categorical
 Input = tf.keras.layers.Input
 
+
+
 def train_model():
     # Load the MNIST dataset
     (x_train, y_train), (x_test, y_test) = mnist.load_data()

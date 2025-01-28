@@ -4,6 +4,9 @@ import numpy as np
 from PIL import Image, ImageDraw
 from tonta import show_image
 from MLmodel import train_model, predict_digit
+import os
+import tensorflow as tf
+load_model = tf.keras.models.load_model
 
 class DigitRecognizerApp:
     def __init__(self, root):
@@ -28,9 +31,17 @@ class DigitRecognizerApp:
         self.image = Image.new("L", (28, 28), 255)
         self.draw_obj = ImageDraw.Draw(self.image)
 
-        # Train the model when the app starts
-        self.model = train_model()
-        messagebox.showinfo("Info", "Model trained successfully!")
+
+                # Load the model if it exists, otherwise train a new one
+        model_path = "mnist_model.h5"
+        if os.path.exists(model_path):
+            self.model = load_model(model_path)
+            messagebox.showinfo("Info", "Model loaded successfully!")
+        else:
+            self.model = train_model()
+            self.model.save(model_path)
+            messagebox.showinfo("Info", "Model trained and saved successfully!")
+
 
     def draw(self, event):
         # Scale down the coordinates to match the 28x28 resolution
